@@ -1,0 +1,134 @@
+.lgbt-hero {
+    min-height: calc(100vh - 96px);
+    display: flex;
+    align-items: center;
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top left,
+            rgba(255, 106, 193, 0.18),
+            rgba(79, 209, 255, 0.15),
+            rgba(5, 8, 22, 0.98));
+}
+
+.lgbt-hero::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        conic-gradient(from 180deg at 50% 50%,
+            rgba(255, 106, 193, 0.25),
+            rgba(255, 209, 102, 0.2),
+            rgba(74, 222, 128, 0.2),
+            rgba(79, 209, 255, 0.25),
+            rgba(168, 85, 247, 0.3),
+            rgba(255, 106, 193, 0.25));
+    opacity: 0.16;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.lgbt-hero__inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.lgbt-hero__title {
+    font-size: clamp(2.4rem, 3.6vw, 3.2rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    background: linear-gradient(120deg,
+            #ff6ac1,
+            #ffd166,
+            #4ade80,
+            #4fd1ff,
+            #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lgbt-hero__subtitle {
+    font-size: 1rem;
+    max-width: 36rem;
+    color: var(--text-muted);
+    margin-bottom: 1.6rem;
+}
+
+.lgbt-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 0.6rem;
+    margin-bottom: 0.6rem;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s, border-color 0.15s;
+}
+
+.lgbt-hero__btn--primary {
+    background: linear-gradient(135deg, #ff6ac1, #a855f7);
+    color: #0b1020;
+    box-shadow: 0 18px 40px rgba(168, 85, 247, 0.5);
+}
+
+.lgbt-hero__btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 50px rgba(168, 85, 247, 0.65);
+}
+
+.lgbt-hero__btn--ghost {
+    background: transparent;
+    border-color: rgba(148, 163, 184, 0.4);
+    color: var(--text-main);
+}
+
+.lgbt-hero__btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.elementor-inline-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -8px;
+    gap: 1rem;
+}
+
+.lgbt-hero__meta span {
+    font-size: 0.85rem;
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: .6rem;
+    border-radius: 1rem;
+    color: var(--text-main);
+}
+
+.hero-card {
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at left top, rgba(255, 106, 193, 0.16), rgba(15, 23, 42, 0.98));
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    padding: 1.4rem 1.6rem;
+    box-shadow: rgba(15, 23, 42, 0.85) 0px 20px 60px;
+}
+
+@media (max-width: 800px) {
+    .lgbt-hero {
+        min-height: auto;
+        padding-top: 3.5rem;
+    }
+
+    .lgbt-hero__inner {
+        text-align: left;
+    }
+
+    .lgbt-hero__title {
+        font-size: 2.1rem;
+    }
+}
