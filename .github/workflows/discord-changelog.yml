@@ -3,7 +3,6 @@ name: Discord Changelog (Embed)
 on:
   push:
     branches:
-      - main
       - master
       - dev
       - "release/**"
