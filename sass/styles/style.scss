@@ -37,6 +37,10 @@ body {
 .site-main {
     flex: 1;
     padding-top: 96px; /* pour laisser de la place à la navbar flottante */
+
+    @media (max-width: 800px) {
+        padding-top: 0;
+    }
 }
 
 .elementor-button {
