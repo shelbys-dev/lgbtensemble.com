@@ -131,44 +131,49 @@
 }
 
 @media (max-width: 800px) {
-    .site-header {
-        position: relative;
+    .site-header-wrapper {
+        top: unset;
+        bottom: 10px;
 
-        &.nav-open {
-            .site-nav {
-                display: block;
+        .site-header {
+            position: relative;
+
+            &.nav-open {
+                .site-nav {
+                    display: block;
+                }
             }
-        }
 
-        .nav-toggle {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .site-nav {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            left: 0;
-            display: none;
-            padding: 0.6rem;
-            border-radius: 16px;
-            background: radial-gradient(circle at top,
-                    rgba(15, 23, 42, 0.98),
-                    rgba(5, 8, 22, 0.98));
-            border: 1px solid rgba(148, 163, 184, 0.35);
-            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
-
-            ul {
+            .nav-toggle {
+                display: flex;
                 flex-direction: column;
-                gap: 0;
             }
 
-            a {
-                display: block;
-                width: 100%;
-                padding: 0.7rem 0.8rem;
-                border-radius: 12px;
+            .site-nav {
+                position: absolute;
+                top: calc(100% + 8px);
+                right: 0;
+                left: 0;
+                display: none;
+                padding: 0.6rem;
+                border-radius: 16px;
+                background: radial-gradient(circle at top,
+                        rgba(15, 23, 42, 0.98),
+                        rgba(5, 8, 22, 0.98));
+                border: 1px solid rgba(148, 163, 184, 0.35);
+                box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+
+                ul {
+                    flex-direction: column;
+                    gap: 0;
+                }
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding: 0.7rem 0.8rem;
+                    border-radius: 12px;
+                }
             }
         }
     }
