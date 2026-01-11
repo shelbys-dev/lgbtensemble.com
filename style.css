@@ -1,0 +1,540 @@
+/*
+Theme Name: LGBT Ensemble
+Theme URI: https://lgbtensemble.com
+Author: Shelby
+Author URI: https://shelbydev.fr
+Description: Thème coloré et inclusif pour la communauté LGBTQIA+ avec navbar flottante et hero section.
+Version: 1.0
+Text Domain: lgbt-ensemble
+*/
+
+:root {
+    --bg-body: #050816;
+    --bg-card: rgba(10, 12, 24, 0.85);
+    --border-soft: rgba(255, 255, 255, 0.1);
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --accent-pink: #ff6ac1;
+    --accent-blue: #4fd1ff;
+    --accent-yellow: #ffd166;
+    --accent-green: #4ade80;
+    --accent-purple: #a855f7;
+    --radius-full: 999px;
+}
+
+/* Reset simple */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #201547 0, #050816 50%, #020617 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Layout basique */
+.site {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-main {
+    flex: 1;
+    padding-top: 96px; /* pour laisser de la place à la navbar flottante */
+}
+
+.elementor-button {
+    background-color: transparent !important;
+}
+
+/* Container global */
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin: 0 auto;
+}
+
+/* ✅ Navbar fixe, flottante, blur 10px */
+.site-header-wrapper {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1100px, 100% - 1.5rem);
+    z-index: 1000;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 1.4rem;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(24, 24, 44, 0.85));
+    border: 1px solid var(--border-soft);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Branding */
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.site-tagline {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Rainbow accent sous forme de petite pill */
+.brand-pill {
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: linear-gradient(90deg,
+        #ff6ac1,
+        #ff9d5c,
+        #ffd166,
+        #4ade80,
+        #4fd1ff,
+        #a855f7
+    );
+    color: #0b1020;
+    font-weight: 600;
+}
+
+/* Navigation */
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav .current-menu-item > a,
+.site-nav .current_page_item > a {
+    color: var(--text-main);
+    background: radial-gradient(circle at top left,
+        rgba(255, 106, 193, 0.25),
+        rgba(79, 209, 255, 0.2)
+    );
+    transform: translateY(-1px);
+}
+
+/* Bouton burger */
+.nav-toggle {
+    display: none; /* caché en desktop */
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 999px;
+    padding: 0.4rem 0.55rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+        #ff6ac1,
+        #4fd1ff,
+        #a855f7
+    );
+}
+
+/* État ouvert (animation simple) */
+.site-header.nav-open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+}
+.site-header.nav-open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+.site-header.nav-open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 800px) {
+    .site-header {
+        position: relative;
+    }
+
+    /* on affiche le burger */
+    .nav-toggle {
+        display: flex;
+    flex-direction: column;
+    }
+
+    /* la nav devient un panneau déroulant */
+    .site-nav {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 0.6rem;
+        border-radius: 16px;
+        background: radial-gradient(circle at top,
+            rgba(15, 23, 42, 0.98),
+            rgba(5, 8, 22, 0.98)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    .site-header.nav-open .site-nav {
+        display: block;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .site-nav a {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 0.8rem;
+        border-radius: 12px;
+    }
+}
+
+/* === HERO Elementor === */
+.lgbt-hero {
+    min-height: calc(100vh - 96px);
+    display: flex;
+    align-items: center;
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top left,
+        rgba(255, 106, 193, 0.18),
+        rgba(79, 209, 255, 0.15),
+        rgba(5, 8, 22, 0.98)
+    );
+}
+
+.lgbt-hero::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        conic-gradient(from 180deg at 50% 50%,
+            rgba(255, 106, 193, 0.25),
+            rgba(255, 209, 102, 0.2),
+            rgba(74, 222, 128, 0.2),
+            rgba(79, 209, 255, 0.25),
+            rgba(168, 85, 247, 0.3),
+            rgba(255, 106, 193, 0.25)
+        );
+    opacity: 0.16;
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+.lgbt-hero__inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.lgbt-hero__title {
+    font-size: clamp(2.4rem, 3.6vw, 3.2rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    background: linear-gradient(120deg,
+        #ff6ac1,
+        #ffd166,
+        #4ade80,
+        #4fd1ff,
+        #a855f7
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lgbt-hero__subtitle {
+    font-size: 1rem;
+    max-width: 36rem;
+    color: var(--text-muted);
+    margin-bottom: 1.6rem;
+}
+
+.lgbt-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 0.6rem;
+    margin-bottom: 0.6rem;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s, border-color 0.15s;
+}
+
+.lgbt-hero__btn--primary {
+    background: linear-gradient(135deg, #ff6ac1, #a855f7);
+    color: #0b1020;
+    box-shadow: 0 18px 40px rgba(168, 85, 247, 0.5);
+}
+
+.lgbt-hero__btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 50px rgba(168, 85, 247, 0.65);
+}
+
+.lgbt-hero__btn--ghost {
+    background: transparent;
+    border-color: rgba(148, 163, 184, 0.4);
+    color: var(--text-main);
+}
+
+.lgbt-hero__btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.elementor-inline-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -8px;
+  gap: 1rem;
+}
+
+.lgbt-hero__meta span {
+    font-size: 0.85rem;
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: .6rem;
+    border-radius: 1rem;
+    color: var(--text-main);
+}
+
+.hero-card {
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at left top, rgba(255, 106, 193, 0.16), rgba(15, 23, 42, 0.98));
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 1.4rem 1.6rem;
+  box-shadow: rgba(15, 23, 42, 0.85) 0px 20px 60px;
+}
+
+/* === Sections génériques === */
+.lgbt-section {
+    padding: 3.5rem 1.5rem;
+}
+
+.lgbt-section--why {
+    background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(5, 8, 22, 0.95));
+}
+
+.lgbt-section__title {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.lgbt-section__subtitle {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto 2.5rem;
+    color: var(--text-muted);
+}
+
+/* Cartes */
+.lgbt-card {
+    background: var(--bg-card);
+    border-radius: 1.4rem;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+}
+
+/* Section CTA */
+.lgbt-section--cta {
+    text-align: center;
+    background: linear-gradient(135deg,
+        rgba(255, 106, 193, 0.2),
+        rgba(79, 209, 255, 0.2),
+        rgba(5, 8, 22, 0.95)
+    );
+}
+
+.lgbt-section--cta .elementor-widget-heading h2 {
+    margin-bottom: 0.75rem;
+}
+
+.lgbt-section--cta p {
+    max-width: 40rem;
+    margin: 0 auto 1.5rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+    padding: 1.5rem 0 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Responsif */
+@media (max-width: 800px) {
+    .lgbt-hero {
+        min-height: auto;
+        padding-top: 3.5rem;
+    }
+
+    .lgbt-hero__inner {
+        text-align: left;
+    }
+
+    .lgbt-hero__title {
+        font-size: 2.1rem;
+    }
+}
+
+.lgbt-glossary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Groupe par lettre */
+.lgbt-glossary-group {
+  width: 100%;
+    background: linear-gradient(90deg,
+        rgba(255,106,193,0.25),
+        rgba(79,209,255,0.25),
+        rgba(168,85,247,0.25)
+    );
+    border: none;
+    padding: 1rem 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+}
+
+/* Bouton lettre (header du groupe) */
+.lgbt-glossary-letter {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+/* Petite flèche indicatrice */
+.lgbt-glossary-letter::after {
+  content: "▸";
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Contenu des items : caché par défaut */
+.lgbt-glossary-items {
+  display: none;
+  padding: 0 1rem 0.75rem;
+}
+
+/* Quand le groupe est ouvert */
+.lgbt-glossary-group.is-open .lgbt-glossary-items {
+  display: block;
+}
+
+/* Flèche tournée quand ouvert */
+.lgbt-glossary-group.is-open .lgbt-glossary-letter::after {
+  transform: rotate(90deg);
+}
+
+/* Styling des items */
+.lgbt-glossary-item {
+  background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.lgbt-glossary-item:first-child {
+  border-top: none;
+}
+
+.lgbt-glossary-term {
+  margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+
+    /* rainbow title shimmer */
+    background: linear-gradient(120deg,
+        #ff6ac1,
+        #ffd166,
+        #4ade80,
+        #4fd1ff,
+        #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lgbt-glossary-definition {
+  margin: .4rem 0 0;
+    color: var(--text-muted, #cbd5e1);
+    line-height: 1.55;
+}
