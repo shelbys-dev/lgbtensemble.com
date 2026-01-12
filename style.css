@@ -463,7 +463,7 @@ body {
 /* Footer */
 .site-footer {
   border-top: 1px solid rgba(148, 163, 184, 0.2);
-  padding: 1.5rem 0 2rem;
+  padding: 1.5rem 0 6rem;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
