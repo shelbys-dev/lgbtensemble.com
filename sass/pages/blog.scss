@@ -5,31 +5,6 @@
     }
 }
 
-/* Fil d'Ariane */
-.breadcrumb {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    align-items: center;
-
-    a {
-        color: var(--text-muted);
-        text-decoration: none;
-
-        &:hover {
-            color: var(--text-main);
-            text-decoration: underline;
-        }
-    }
-}
-
-.breadcrumb-sep {
-    opacity: 0.5;
-}
-
 /* Header du blog */
 .blog-header {
     margin-bottom: 1.5rem;

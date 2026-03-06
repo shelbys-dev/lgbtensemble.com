@@ -468,11 +468,6 @@ body {
   color: var(--text-muted);
 }
 
-/* ===== BLOG LIST ===== */
-.blog .container {
-  max-width: 960px;
-}
-
 /* Fil d'Ariane */
 .breadcrumb {
   font-size: 0.8rem;
@@ -494,6 +489,11 @@ body {
 
 .breadcrumb-sep {
   opacity: 0.5;
+}
+
+/* ===== BLOG LIST ===== */
+.blog .container {
+  max-width: 960px;
 }
 
 /* Header du blog */
