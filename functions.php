@@ -29,12 +29,22 @@ if (!function_exists('lgbt_ensemble_setup')) {
 add_action('after_setup_theme', 'lgbt_ensemble_setup');
 
 if (!function_exists('lgbt_ensemble_assets')) {
+    function lgbt_ensemble_asset_version($relative_path) {
+        $file_path = get_stylesheet_directory() . '/' . ltrim($relative_path, '/');
+
+        if (file_exists($file_path)) {
+            return (string) filemtime($file_path);
+        }
+
+        return wp_get_theme()->get('Version');
+    }
+
     function lgbt_ensemble_assets() {
         wp_enqueue_style(
             'lgbt-ensemble-style',
             get_stylesheet_uri(),
             [],
-            wp_get_theme()->get('Version')
+            lgbt_ensemble_asset_version('style.css')
         );
     }
 }
