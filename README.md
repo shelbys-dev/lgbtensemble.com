@@ -22,6 +22,7 @@ Ce repository contient un theme WordPress custom pour la communaute LGBTQIA+:
 
 ## Workflow CSS (Sass -> style.css)
 Le theme charge `style.css` (via `get_stylesheet_uri()` dans `functions.php`).
+Le parametre de version de la feuille est genere automatiquement avec `filemtime(style.css)` pour forcer le refresh cache apres chaque recompilation.
 
 Source principale Sass:
 - `sass/index.scss`
@@ -36,8 +37,14 @@ Mode watch:
 sass --watch sass/index.scss:style.css --no-source-map --style=expanded
 ```
 
+## Versioning des assets (cache-busting)
+- Le CSS principal est enqueue avec une version basee sur la date de modification du fichier `style.css`.
+- Concretement, l'URL devient `style.css?ver=<timestamp>`.
+- A chaque recompilation Sass, `filemtime` change et les navigateurs/CDN recuperent la nouvelle version.
+- En fallback (si fichier absent), la version du theme est utilisee.
+
 ## Structure principale
-- `functions.php`: setup du theme, enregistrement menu, support thumbnails/HTML5, enqueue des styles, support Elementor.
+- `functions.php`: setup du theme, enregistrement menu, support thumbnails/HTML5, enqueue des styles avec versioning auto (filemtime), support Elementor.
 - `header.php` / `footer.php`: layout global, navbar, footer et script toggle mobile.
 - `front-page.php`: hero + mise en avant des derniers articles.
 - `index.php`: template de liste des posts/archives.
