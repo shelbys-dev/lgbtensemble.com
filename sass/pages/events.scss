@@ -15,6 +15,11 @@
     --tec-color-text-muted: #b7c0cf;
 }
 
+.datepicker,
+.tribe-events-c-subscribe-dropdown__list {
+    background: rgba(15, 23, 42, 0.8);
+}
+
 .tribe-events {
     .tribe-events-l-container {
         max-width: 960px;
@@ -156,11 +161,14 @@
 
     .tribe-events-event-meta {
         margin-top: 1rem;
-        border: 1px solid rgba(148, 163, 184, 0.4);
-        border-radius: 16px;
-        background: rgba(10, 12, 24, 0.85);
         box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
         opacity: 1 !important;
+
+        .tribe-events-meta-group {
+            .tribe-events-meta-list {
+                float: right;
+            }
+        }
     }
 
     .tribe-events-content,
