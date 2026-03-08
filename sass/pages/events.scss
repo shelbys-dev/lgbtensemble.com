@@ -10,6 +10,9 @@
     --tec-color-background: transparent;
     --tec-color-background-secondary: rgba(10, 12, 24, 0.85);
     --tec-color-border-secondary: rgba(148, 163, 184, 0.4);
+    --tec-color-text-event-title: var(--text-main);
+    --tec-color-text-event-date: #dbe3f0;
+    --tec-color-text-muted: #b7c0cf;
 }
 
 .tribe-events {
@@ -86,6 +89,10 @@
 }
 
 .tribe-events-view--list {
+    .tribe-events-calendar-list__event * {
+        color: inherit;
+    }
+
     .tribe-events-calendar-list__month-separator-text,
     .tribe-events-calendar-list__event-date-tag-month,
     .tribe-events-calendar-list__event-date-tag-daynum,
@@ -116,6 +123,7 @@
     .tribe-events-calendar-list__event-title-link,
     .tribe-events-calendar-list__event-title {
         color: var(--text-main) !important;
+        opacity: 1 !important;
         text-decoration: none;
 
         &:hover {
@@ -124,10 +132,18 @@
     }
 
     .tribe-events-calendar-list__event-datetime,
+    .tribe-events-calendar-list__event-date-tag-datetime,
+    .tribe-events-calendar-list__event-datetime-wrapper,
     .tribe-events-calendar-list__event-venue,
     .tribe-events-calendar-list__event-description {
-        color: var(--text-muted) !important;
+        color: #d1d8e3 !important;
+        opacity: 1 !important;
         font-size: 0.9rem;
+    }
+
+    .tribe-events-calendar-list__event-title-link:visited,
+    .tribe-events-calendar-list__event-title-link:active {
+        color: var(--text-main) !important;
     }
 }
 
@@ -144,12 +160,26 @@
         border-radius: 16px;
         background: rgba(10, 12, 24, 0.85);
         box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+        opacity: 1 !important;
     }
 
     .tribe-events-content,
-    .tribe-events-content p {
-        color: var(--text-muted);
+    .tribe-events-content p,
+    .tribe-events-single-event-description,
+    .tribe-events-single-event-description p {
+        color: #d1d8e3 !important;
         line-height: 1.7;
+    }
+
+    .tribe-events-single-section-title,
+    .tribe-events-abbr,
+    .tribe-events-event-meta dt,
+    .tribe-events-event-meta dd,
+    .tribe-events-event-meta .tribe-events-cost,
+    .tribe-events-meta-group,
+    .tribe-events-single-section {
+        color: var(--text-main) !important;
+        opacity: 1 !important;
     }
 
     .tribe-events-event-meta a,
