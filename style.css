@@ -795,7 +795,7 @@ body {
 
 .datepicker,
 .tribe-events-c-subscribe-dropdown__list {
-  background: rgba(15, 23, 42, 0.8);
+  background-color: rgba(15, 23, 42, 0.8);
 }
 
 .tribe-events .tribe-events-l-container {
