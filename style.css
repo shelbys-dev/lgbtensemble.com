@@ -468,6 +468,106 @@ body {
   color: var(--text-muted);
 }
 
+.comments-area {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.comments-title {
+  margin: 0 0 1rem;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.comment-list .comment-body {
+  padding: 1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.6);
+}
+.comment-list .children {
+  list-style: none;
+  margin: 0.75rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.comment-form {
+  display: grid;
+  gap: 0.9rem;
+}
+.comment-form .comment-notes,
+.comment-form .logged-in-as {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.user-box {
+  position: relative;
+  margin: 0;
+}
+.user-box input,
+.user-box textarea {
+  width: 100%;
+  padding: 0.95rem 0 0.55rem;
+  font-size: 1rem;
+  color: var(--text-main);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  outline: none;
+  background: transparent;
+  border-radius: 0;
+}
+.user-box input:focus,
+.user-box textarea:focus {
+  border-bottom-color: var(--accent-pink);
+}
+.user-box textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+.user-box label {
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+.user-box:focus-within label,
+.user-box input:not(:placeholder-shown) + label,
+.user-box textarea:not(:placeholder-shown) + label {
+  top: -0.35rem;
+  font-size: 0.75rem;
+  color: var(--accent-pink);
+}
+
+.comment-form-cookies-consent {
+  display: flex;
+  gap: 0.5rem;
+  align-items: start;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.form-submit {
+  margin: 0.2rem 0 0;
+}
+.form-submit .submit {
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.7rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+  color: #0b1020;
+}
+
 /* Fil d'Ariane */
 .breadcrumb {
   font-size: 0.8rem;
