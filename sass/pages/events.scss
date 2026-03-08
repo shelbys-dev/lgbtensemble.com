@@ -165,8 +165,6 @@
         opacity: 1 !important;
 
         .tribe-events-meta-group {
-            width: 100%;
-
             .tribe-events-meta-list {
                 float: right;
             }
@@ -190,6 +188,7 @@
     .tribe-events-single-section {
         color: var(--text-main) !important;
         opacity: 1 !important;
+        width: 100%;
     }
 
     .tribe-events-event-meta a,
