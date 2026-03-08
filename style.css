@@ -880,12 +880,14 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.4);
   background: radial-gradient(circle at top left, rgba(255, 106, 193, 0.25), rgba(79, 209, 255, 0.25));
 }
+.tribe-events-view--list .tribe-events-calendar-latest-past__event-title-link,
 .tribe-events-view--list .tribe-events-calendar-list__event-title-link,
 .tribe-events-view--list .tribe-events-calendar-list__event-title {
   color: var(--text-main) !important;
   opacity: 1 !important;
   text-decoration: none;
 }
+.tribe-events-view--list .tribe-events-calendar-latest-past__event-title-link:hover,
 .tribe-events-view--list .tribe-events-calendar-list__event-title-link:hover,
 .tribe-events-view--list .tribe-events-calendar-list__event-title:hover {
   text-decoration: underline;
