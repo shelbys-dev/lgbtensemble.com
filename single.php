@@ -32,6 +32,12 @@ get_header();
                 <div class="blog-single-content">
                     <?php the_content(); ?>
                 </div>
+
+                <?php if (comments_open() || get_comments_number()) : ?>
+                    <div class="blog-single-comments">
+                        <?php comments_template(); ?>
+                    </div>
+                <?php endif; ?>
             </article>
         <?php endwhile; endif; ?>
 
