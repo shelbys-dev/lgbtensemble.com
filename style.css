@@ -914,6 +914,9 @@ body {
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
   opacity: 1 !important;
 }
+.single-tribe_events .tribe-events-event-meta .tribe-events-meta-group {
+  width: 100%;
+}
 .single-tribe_events .tribe-events-event-meta .tribe-events-meta-group .tribe-events-meta-list {
   float: right;
 }
