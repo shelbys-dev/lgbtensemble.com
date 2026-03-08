@@ -1,3 +1,4 @@
+/* ===== EVENTS (The Events Calendar) ===== */
 .tribe-common,
 .tribe-events {
     --tec-color-accent-primary: var(--accent-pink);
@@ -7,48 +8,51 @@
     --tec-color-text-primary: var(--text-main);
     --tec-color-text-secondary: var(--text-muted);
     --tec-color-background: transparent;
-    --tec-color-background-secondary: rgba(10, 12, 24, 0.65);
-    --tec-color-border-secondary: var(--border-soft);
+    --tec-color-background-secondary: rgba(10, 12, 24, 0.85);
+    --tec-color-border-secondary: rgba(148, 163, 184, 0.4);
 }
 
 .tribe-events {
     .tribe-events-l-container {
+        max-width: 960px;
         padding-top: 1rem;
         padding-bottom: 2rem;
     }
 
+    .tribe-events-header,
     .tribe-events-c-top-bar,
-    .tribe-events-header {
-        background: rgba(10, 12, 24, 0.78);
-        border: 1px solid var(--border-soft);
-        border-radius: 16px;
-        padding: 0.9rem 1rem;
+    .tribe-events-calendar-list-nav {
         margin-bottom: 1rem;
-        backdrop-filter: blur(4px);
+        padding: 0.7rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: rgba(15, 23, 42, 0.8);
     }
 
     .tribe-events-c-top-bar__nav-link,
     .tribe-events-c-view-selector__button,
     .tribe-events-c-top-bar__today-button {
+        border-radius: 999px;
+        font-size: 0.85rem;
         color: var(--text-main);
     }
 
     .tribe-events-c-top-bar__today-button {
-        border-radius: var(--radius-full);
-        border: 1px solid var(--border-soft);
-        background: rgba(79, 209, 255, 0.12);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: rgba(15, 23, 42, 0.8);
     }
 }
 
 .tribe-events-view--month {
-    .tribe-events-calendar-month__header-column-title,
-    .tribe-events-calendar-month__day-date-daynum {
-        color: var(--text-main);
+    .tribe-events-calendar-month__header-column-title {
+        color: var(--text-muted);
+        font-size: 0.8rem;
     }
 
     .tribe-events-calendar-month__day-cell {
-        background: rgba(10, 12, 24, 0.68);
-        border: 1px solid var(--border-soft);
+        background: rgba(10, 12, 24, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
         transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
@@ -57,71 +61,117 @@
         transform: translateY(-1px);
     }
 
-    .tribe-events-calendar-month__day-cell--selected,
-    .tribe-events-calendar-month__day-cell--current {
-        border-color: rgba(79, 209, 255, 0.55);
+    .tribe-events-calendar-month__day-date-daynum {
+        color: var(--text-main);
+    }
+
+    .tribe-events-calendar-month__day-cell--current,
+    .tribe-events-calendar-month__day-cell--selected {
+        border-color: rgba(79, 209, 255, 0.45);
     }
 
     .tribe-events-calendar-month__calendar-event {
-        border-radius: 8px;
-        background: linear-gradient(135deg, rgba(255, 106, 193, 0.22), rgba(79, 209, 255, 0.22));
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: radial-gradient(circle at top left,
+                rgba(255, 106, 193, 0.25),
+                rgba(79, 209, 255, 0.25));
+        padding: 0.2rem 0.5rem;
     }
 
     .tribe-events-calendar-month__calendar-event-title,
     .tribe-events-calendar-month__calendar-event-datetime {
         color: var(--text-main);
+        font-size: 0.8rem;
     }
 }
 
 .tribe-events-view--list {
     .tribe-events-calendar-list__event {
-        border: 1px solid var(--border-soft);
-        border-radius: 14px;
-        background: rgba(10, 12, 24, 0.72);
+        background: rgba(10, 12, 24, 0.85);
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
         overflow: hidden;
     }
 
     .tribe-events-calendar-list__event-row {
-        padding: 1rem;
+        padding: 1.2rem 1.4rem;
     }
 
     .tribe-events-calendar-list__event-date-tag {
-        border-radius: 10px;
-        border: 1px solid var(--border-soft);
-        background: rgba(255, 106, 193, 0.14);
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: radial-gradient(circle at top left,
+                rgba(255, 106, 193, 0.25),
+                rgba(79, 209, 255, 0.25));
     }
 
     .tribe-events-calendar-list__event-title-link,
     .tribe-events-calendar-list__event-title {
         color: var(--text-main);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
-    .tribe-events-calendar-list__event-description,
-    .tribe-events-calendar-list__event-venue {
+    .tribe-events-calendar-list__event-datetime,
+    .tribe-events-calendar-list__event-venue,
+    .tribe-events-calendar-list__event-description {
         color: var(--text-muted);
+        font-size: 0.9rem;
     }
 }
 
 .single-tribe_events {
     .tribe-events-single-event-title {
+        margin: 0 0 0.6rem;
+        font-size: 1.8rem;
         color: var(--text-main);
     }
 
     .tribe-events-event-meta {
-        border: 1px solid var(--border-soft);
-        border-radius: 14px;
-        background: rgba(10, 12, 24, 0.72);
+        margin-top: 1rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        border-radius: 16px;
+        background: rgba(10, 12, 24, 0.85);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .tribe-events-content,
+    .tribe-events-content p {
+        color: var(--text-muted);
+        line-height: 1.7;
     }
 
     .tribe-events-event-meta a,
     .tribe-events-content a {
         color: var(--accent-blue);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .tribe-events-c-subscribe-dropdown__button {
-        border-radius: var(--radius-full);
-        border: 1px solid var(--border-soft);
-        background: linear-gradient(135deg, rgba(255, 106, 193, 0.2), rgba(79, 209, 255, 0.2));
-        color: var(--text-main);
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: linear-gradient(135deg, #ff6ac1, #a855f7);
+        color: #0b1020;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 800px) {
+    .tribe-events {
+        .tribe-events-header,
+        .tribe-events-c-top-bar {
+            border-radius: 16px;
+            padding: 0.7rem;
+        }
     }
 }
