@@ -874,6 +874,7 @@ body {
 }
 .tribe-events-view--list .tribe-events-calendar-list__event-row {
   padding: 1.2rem 1.4rem;
+  align-items: center;
 }
 .tribe-events-view--list .tribe-events-calendar-list__event-date-tag {
   border-radius: 999px;
@@ -900,6 +901,7 @@ body {
   color: #d1d8e3 !important;
   opacity: 1 !important;
   font-size: 0.9rem;
+  justify-content: center;
 }
 .tribe-events-view--list .tribe-events-calendar-list__event-title-link:visited,
 .tribe-events-view--list .tribe-events-calendar-list__event-title-link:active {
